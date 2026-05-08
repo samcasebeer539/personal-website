@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sam Casebeer — Portfolio
+
+Personal portfolio site showcasing art (Blender 3D, Procreate, Illustration) and coding projects. Built with Next.js, Tailwind CSS, and Cloudinary.
+
+---
+
+## Tech Stack
+
+- **[Next.js](https://nextjs.org/)** — React framework with App Router
+- **[TypeScript](https://www.typescriptlang.org/)** — Type safety
+- **[Tailwind CSS](https://tailwindcss.com/)** — Utility-first styling
+- **[Framer Motion](https://www.framer.com/motion/)** — Animations and transitions
+- **[GSAP + ScrollTrigger](https://gsap.com/)** — Scroll-driven layout behavior
+- **[Zustand](https://zustand-demo.pmnd.rs/)** — Lightweight global state
+- **[Cloudinary](https://cloudinary.com/)** — Image hosting and optimization
+- **[Vercel](https://vercel.com/)** — Hosting and CI/CD
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- A [Cloudinary](https://cloudinary.com/) account (free tier works)
+
+### Installation
+
+```bash
+git clone https://github.com/your-username/portfolio.git
+cd portfolio
+npm install
+```
+
+### Environment Variables
+
+Create a `.env.local` file in the root of the project:
+
+```env
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+```
+
+### Running Locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+src/
+  app/
+    layout.tsx          # Root layout, fonts, global dark background
+    page.tsx            # Home — two-panel shell
+    globals.css
+  components/
+    Sidebar.tsx         # Left panel — name, bio, nav
+    Gallery.tsx         # Right panel — image grid
+    GalleryFilter.tsx   # Medium tabs (Blender 3D / Procreate / etc.)
+    ProjectCard.tsx     # Coding project cards
+  content/
+    projects/           # MDX files for coding project writeups
+  lib/
+    store.ts            # Zustand store (active section, active filter)
+    cloudinary.ts       # Cloudinary config and helpers
+  types/
+    index.ts            # Shared TypeScript types
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The site deploys automatically to [Vercel](https://vercel.com/) on every push to `main`. To set up:
 
-## Deploy on Vercel
+1. Import the GitHub repo at [vercel.com/new](https://vercel.com/new)
+2. Add the environment variables from `.env.local` in the Vercel dashboard
+3. Deploy — Vercel auto-detects Next.js, no config needed
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Adding Content
+
+### Art
+Upload images to Cloudinary and reference them via the Cloudinary URL helpers in `src/lib/cloudinary.ts`.
+
+### Coding Projects
+Add a new `.mdx` file to `src/content/projects/`. Each file should include frontmatter:
+
+```mdx
+---
+title: Project Name
+description: Short description
+tags: [React, TypeScript]
+date: 2025-01-01
+link: https://github.com/your-username/project
+---
+
+Your writeup here...
+```
+
+---
+
+## License
+
+MIT
