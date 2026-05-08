@@ -1,0 +1,30 @@
+'use client'
+
+type Medium = 'All' | 'Blender 3D' | 'Procreate' | 'Illustration'
+
+const mediums: Medium[] = ['All', 'Blender 3D', 'Procreate', 'Illustration']
+
+interface Props {
+  active: Medium
+  onChange: (medium: Medium) => void
+}
+
+export default function GalleryFilter({ active, onChange }: Props) {
+  return (
+    <div className="flex gap-4 mb-6">
+      {mediums.map((medium) => (
+        <button
+          key={medium}
+          onClick={() => onChange(medium)}
+          className={`text-xs tracking-wide transition-colors ${
+            active === medium
+              ? 'text-white'
+              : 'text-white/30 hover:text-white/60'
+          }`}
+        >
+          {medium}
+        </button>
+      ))}
+    </div>
+  )
+}
