@@ -15,8 +15,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={openSans.variable}>
-      <body className="font-sans bg-[#1a1a1a] text-white antialiased">
+    <html lang="en" className={`${openSans.variable} bg-transparent`}>
+      <body className="font-sans text-white antialiased bg-transparent">
+        {/* Background image */}
+        <div
+          className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url(/retrotrain.png)' }}
+        />
+        {/* Signature */}
+        <img
+          src="/signature.png"
+          alt="Sam Casebeer"
+          className="fixed bottom-4 right-4 -z-10 w-32 opacity-100 pointer-events-none"
+        />
+        {/* Optional dark overlay to keep text readable */}
+        <div className="fixed inset-0 -z-10 bg-black/60" />
         {children}
       </body>
     </html>

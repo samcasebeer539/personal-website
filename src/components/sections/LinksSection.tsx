@@ -1,7 +1,25 @@
+import NextLink from 'next/link'
+
 export default function LinksSection() {
+  const links = [
+    { label: 'GitHub',    href: 'https://github.com/samcasebeer539' },
+    { label: 'LinkedIn',  href: 'https://linkedin.com/in/samuel-casebeer' },
+    { label: 'Instagram', href: 'https://instagram.com/samcasebeer.art' },
+  ]
+
   return (
-    <div className="px-6 py-4">
-      <p className="text-white/40 text-sm">Links coming soon.</p>
+    <div className="flex flex-col gap-2">
+      {links.map(({ label, href }) => (
+        <NextLink
+          key={label}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-white/60 hover:text-white transition-colors w-fit"
+        >
+          {label}
+        </NextLink>
+      ))}
     </div>
   )
 }

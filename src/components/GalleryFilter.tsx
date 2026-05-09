@@ -16,10 +16,10 @@ export default function GalleryFilter({ active, onChange }: Props) {
         <button
           key={medium}
           onClick={() => onChange(medium)}
-          className={`text-xs tracking-wide transition-colors ${
+          className={`text-sm tracking-wide transition-colors ${
             active === medium
               ? 'text-white'
-              : 'text-white/30 hover:text-white/60'
+              : 'text-white/60 hover:text-white/100'
           }`}
         >
           {medium}
