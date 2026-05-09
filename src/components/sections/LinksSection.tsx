@@ -15,7 +15,7 @@ export default function LinksSection() {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm text-white/60 hover:text-white transition-colors w-fit"
+          className="text-sm text-white/100 hover:text-white transition-colors w-fit"
         >
           {label}
         </NextLink>

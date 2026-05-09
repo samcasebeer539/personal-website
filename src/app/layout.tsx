@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <img
           src="/signature.png"
           alt="Sam Casebeer"
-          className="fixed bottom-4 right-4 -z-10 w-32 opacity-100 pointer-events-none"
+          className="fixed bottom-4 right-4 -z-10 w-32 opacity-40 pointer-events-none"
         />
         {/* Optional dark overlay to keep text readable */}
         <div className="fixed inset-0 -z-10 bg-black/60" />

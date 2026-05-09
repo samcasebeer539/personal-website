@@ -5,13 +5,14 @@ import Gallery, { GalleryImage } from '@/components/Gallery'
 import GalleryFilter from '@/components/GalleryFilter'
 import { useState } from 'react'
 import LinksSection from './sections/LinksSection'
+import ProjectsSection from './sections/ProjectsSection'
 
 const HEADER_HEIGHT = 44
 
 const sections = [
   { id: 'sam',       label: 'Sam',       icon: User },
   { id: 'galleries', label: 'Galleries', icon: ImageIcon },
-  { id: 'projects',  label: 'Projects',  icon: FolderOpen },
+  { id: 'projects',  label: 'The Project',  icon: FolderOpen },
   { id: 'links',     label: 'Links',     icon: ExternalLink },
   { id: 'about',     label: 'About',     icon: Info },
 ] as const
@@ -50,8 +51,12 @@ export default function ClientHome({ images }: Props) {
             {isOpen && (
               <div className="flex-1 pl-[51px] pr-6 py-4">
                 {section.id === 'sam' && (
-                  <p className="text-sm text-white/100 leading-relaxed font-light max-w-sm">
-                    I'm Sam Casebeer, I'm an artist and creative developer based in California.
+                  <p className="text-sm tracking-wide text-white/100 leading-relaxed font-light max-w-lg">
+                    I'm Sam Casebeer, I'm a multimedia artist and aspiring creative developer based in California. This website is a
+                    home for my art and projects. 
+                    
+                    Feel free to explore and reach out for collabs, commissions, steady employment opportunites or just say hi!
+
                   </p>
                 )}
                 {section.id === 'galleries' && (
@@ -62,9 +67,7 @@ export default function ClientHome({ images }: Props) {
                     <Gallery images={images} active={activeFilter} onChange={setActiveFilter} />
                   </>
                 )}
-                {section.id === 'projects' && (
-                  <p className="text-sm text-white/40">Projects coming soon.</p>
-                )}
+                {section.id === 'projects' && <ProjectsSection />}
                 {section.id === 'links' && <LinksSection />}
                 {section.id === 'about' && (
                   <p className="text-sm text-white/40">About coming soon.</p>
