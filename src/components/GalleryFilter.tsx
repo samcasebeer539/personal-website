@@ -1,8 +1,8 @@
 'use client'
 
-type Medium = 'All' | 'Blender 3D' | 'Procreate' | 'Illustration'
+type Medium = 'Blender 3D' | 'Procreate' | 'Illustration'
 
-const mediums: Medium[] = ['All', 'Blender 3D', 'Procreate', 'Illustration']
+const mediums: Medium[] = ['Blender 3D', 'Procreate', 'Illustration']
 
 interface Props {
   active: Medium

@@ -18,15 +18,15 @@ const sections = [
 ] as const
 
 type SectionId = typeof sections[number]['id']
-type Medium = 'All' | 'Blender 3D' | 'Procreate' | 'Illustration'
+type Medium = 'Blender 3D' | 'Procreate' | 'Illustration'
 
 interface Props {
   images: GalleryImage[]
 }
 
 export default function ClientHome({ images }: Props) {
-  const [open, setOpen]               = useState<SectionId>('sam')
-  const [activeFilter, setActiveFilter] = useState<Medium>('All')
+  const [open, setOpen] = useState<SectionId | null>('sam')
+  const [activeFilter, setActiveFilter] = useState<Medium>('Blender 3D')
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -38,7 +38,7 @@ export default function ClientHome({ images }: Props) {
           <div key={section.id} className="flex flex-col">
 
             <button
-              onClick={() => setOpen(section.id)}
+              onClick={() => setOpen(open === section.id ? null : section.id)}
               className="w-full flex items-center gap-3 px-6 text-left transition-colors"
               style={{ height: HEADER_HEIGHT }}
             >
@@ -53,7 +53,7 @@ export default function ClientHome({ images }: Props) {
                 {section.id === 'sam' && (
                   <p className="text-sm tracking-wide text-white/100 leading-relaxed font-light max-w-lg">
                     I'm Sam Casebeer, I'm a multimedia artist and aspiring creative developer based in California. This website is a
-                    home for my art and projects. 
+                    space for my art and projects. 
                     
                     Feel free to explore and reach out for collabs, commissions, steady employment opportunites or just say hi!
 

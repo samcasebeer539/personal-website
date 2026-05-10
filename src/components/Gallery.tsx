@@ -23,9 +23,9 @@ export default function Gallery({ images, active, onChange }: Props) {
 
   return (
     <section>
-      <div className="columns-2 lg:columns-3 gap-2">
+      <div className="columns-2 lg:columns-3 gap-3">
         {filtered.map((img) => (
-          <div key={img.id} className="break-inside-avoid mb-2 overflow-hidden rounded bg-white/5">
+          <div key={img.id} className="break-inside-avoid mb-3 overflow-hidden rounded-xs bg-white/5">
             <img
               src={img.src}
               alt={img.alt}

@@ -21,7 +21,7 @@ export async function getGalleryImages() {
     folders.map((folder) =>
       cloudinary.search
         .expression(`folder:${folder}`)
-        .sort_by('filename', 'desc')
+        .sort_by('filename', 'asc')
         .max_results(50)
         .execute()
     )
