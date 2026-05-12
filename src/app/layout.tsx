@@ -20,16 +20,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Background image */}
         <div
           className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(/retrotrain.png)' }}
+          style={{ backgroundImage: 'url(/retrotrain1.png)' }}
         />
         {/* Signature */}
         <img
           src="/signature.png"
           alt="Sam Casebeer"
-          className="fixed bottom-4 right-4 -z-10 w-32 opacity-40 pointer-events-none"
+          className="fixed bottom-4 right-4 -z-10 w-28 opacity-100 pointer-events-none"
         />
         {/* Optional dark overlay to keep text readable */}
-        <div className="fixed inset-0 -z-10 bg-black/60" />
+        <div className="fixed inset-0 -z-10 bg-black/25" />
         {children}
       </body>
     </html>
