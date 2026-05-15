@@ -5,6 +5,7 @@ export default function LinksSection() {
     { label: 'GitHub',    href: 'https://github.com/samcasebeer539' },
     { label: 'LinkedIn',  href: 'https://linkedin.com/in/samuel-casebeer' },
     { label: 'Instagram', href: 'https://instagram.com/samcasebeer.art' },
+    { label: 'Letterboxd', href: 'https://boxd.it/53PyP' },
   ]
 
   return (

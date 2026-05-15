@@ -18,8 +18,8 @@ export default function GalleryFilter({ active, onChange }: Props) {
           onClick={() => onChange(medium)}
           className={`text-sm tracking-wide transition-colors ${
             active === medium
-              ? 'text-white'
-              : 'text-white/60 hover:text-white/100'
+              ? 'text-white underline underline-offset-4'
+              : 'text-white'
           }`}
         >
           {medium}

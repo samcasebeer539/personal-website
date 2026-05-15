@@ -11,7 +11,7 @@ export default function ProjectsSection() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-col gap-4 max-w-lg">
+      <div className="flex flex-col gap-4 max-w-xl">
         <p className="text-white/100 text-sm tracking-wide leading-relaxed font-light">
           More productive online social spaces.
         </p>
@@ -41,7 +41,7 @@ export default function ProjectsSection() {
 
       {winWinOpen && (
         <>
-          <div className="flex flex-col gap-4 max-w-lg">
+          <div className="flex flex-col gap-4 max-w-xl">
             <p className="text-white/100 text-sm tracking-wide leading-relaxed font-light">
               To provide users with a unique, gamified bartering app to trade goods.
             </p>
@@ -62,12 +62,12 @@ export default function ProjectsSection() {
           </div>
 
           {[
-            { label: 'Your Deck', description: 'Your description here.', photos: profilePhotos },
-            { label: 'Feed',      description: 'Your description here.', photos: feedPhotos },
+            { label: 'Your Deck', description: 'Customize your profile card, add locations, create trading cards, recieve queries and offers, initiate trades.', photos: profilePhotos },
+            { label: 'Feed',      description: 'Discover trading cards in your area through feed and user decks, send queries and offers.', photos: feedPhotos },
             { label: 'Barter',    description: 'Your description here.', photos: barterPhotos },
           ].map(({ label, description, photos }) => (
             <div key={label} className="flex flex-col gap-2">
-              <div className="max-w-lg flex flex-col gap-1">
+              <div className="max-w-xl flex flex-col gap-1">
                 <p className="text-white/100 text-sm tracking-wide leading-relaxed font-light">{label}</p>
                 <p className="text-white/100 text-sm tracking-wide leading-relaxed font-light">{description}</p>
               </div>

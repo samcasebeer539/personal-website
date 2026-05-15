@@ -6,6 +6,7 @@ import GalleryFilter from '@/components/GalleryFilter'
 import { useState } from 'react'
 import LinksSection from './sections/LinksSection'
 import ProjectsSection from './sections/ProjectsSection'
+import AboutSection from './sections/AboutSection'
 
 const HEADER_HEIGHT = 44
 
@@ -14,7 +15,7 @@ const sections = [
   { id: 'galleries', label: 'Galleries', icon: ImageIcon },
   { id: 'projects',  label: 'The Project',  icon: FolderOpen },
   { id: 'links',     label: 'Links',     icon: ExternalLink },
-  { id: 'about',     label: 'About',     icon: Info },
+  { id: 'about',     label: 'About Me',     icon: Info },
 ] as const
 
 type SectionId = typeof sections[number]['id']
@@ -51,11 +52,11 @@ export default function ClientHome({ images }: Props) {
             {isOpen && (
               <div className="flex-1 pl-[51px] pr-6 py-4">
                 {section.id === 'sam' && (
-                  <p className="text-sm tracking-wide text-white/100 leading-relaxed font-light max-w-lg">
+                  <p className="text-sm tracking-wide text-white/100 leading-relaxed font-light max-w-xl">
                     I'm Sam Casebeer, I'm a multimedia artist and aspiring creative developer based in California. This website is a
                     space for my art and projects. 
                     
-                    Feel free to explore and reach out for collabs, commissions, steady employment opportunites or just say hi!
+                    Feel free to explore and reach out for collabs, commissions, with steady employment opportunites or just to say hi!
 
                   </p>
                 )}
@@ -69,15 +70,21 @@ export default function ClientHome({ images }: Props) {
                 )}
                 {section.id === 'projects' && <ProjectsSection />}
                 {section.id === 'links' && <LinksSection />}
-                {section.id === 'about' && (
-                  <p className="text-sm text-white/40">About coming soon.</p>
-                )}
+                {section.id === 'about' && <AboutSection />}
               </div>
             )}
 
           </div>
         )
       })}
+
+      <div className="pl-[16px] mt-1 mb-4">
+        <img
+          src="/signature.png"
+          alt="Sam Casebeer"
+          className="w-24 opacity-100 pointer-events-none"
+        />
+      </div>
     </div>
   )
 }
