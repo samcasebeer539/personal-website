@@ -11,25 +11,22 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   title: 'Sam Casebeer',
   description: 'Artist & Creative Developer',
+  icons: {
+    icon: '/star-64.ico',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${openSans.variable} bg-transparent`}>
       <body className="font-sans text-white antialiased bg-transparent">
-        {/* Background image */}
+        
         <div
           className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(/retrotrainbw.png)' }}
+          style={{ backgroundImage: 'url(/commie1.png)' }}
         />
-        {/* Signature */}
-        {/* <img
-          src="/signature.png"
-          alt="Sam Casebeer"
-          className="fixed bottom-4 right-4 -z-10 w-28 opacity-100 pointer-events-none"
-        /> */}
-        {/* Optional dark overlay to keep text readable */}
-        <div className="fixed inset-0 -z-10 bg-black/80" />
+        
+        <div className="fixed inset-0 -z-10 bg-black/50" />
         {children}
       </body>
     </html>

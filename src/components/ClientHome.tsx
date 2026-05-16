@@ -52,7 +52,7 @@ export default function ClientHome({ images }: Props) {
             {isOpen && (
               <div className="flex-1 pl-[51px] pr-6 py-4">
                 {section.id === 'sam' && (
-                  <p className="text-sm tracking-wide text-white/100 leading-relaxed font-light max-w-xl">
+                  <p className="text-sm tracking-wide text-white/80 leading-relaxed font-light max-w-xl">
                     I'm Sam Casebeer, I'm a multimedia artist and aspiring creative developer based in California. This website is a
                     space for my art and projects. 
                     

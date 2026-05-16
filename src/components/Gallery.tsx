@@ -1,14 +1,12 @@
 'use client'
 
-import GalleryFilter from './GalleryFilter'
-
-type Medium = 'All' | 'Blender 3D' | 'Procreate' | 'Illustration'
+type Medium = 'Blender 3D' | 'Procreate' | 'Illustration'
 
 export interface GalleryImage {
   id: string
   src: string
   alt: string
-  medium: Exclude<Medium, 'All'>
+  medium: Medium
   span?: 'tall'
 }
 
@@ -19,7 +17,7 @@ interface Props {
 }
 
 export default function Gallery({ images, active, onChange }: Props) {
-  const filtered = active === 'All' ? images : images.filter((img) => img.medium === active)
+  const filtered = images.filter((img) => img.medium === active)
 
   return (
     <section>
