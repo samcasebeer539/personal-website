@@ -30,7 +30,7 @@ export default function ClientHome({ images }: Props) {
   const [activeFilter, setActiveFilter] = useState<Medium>('Blender 3D')
 
   return (
-    <div className="min-h-screen flex flex-col pt-2">
+    <div className="min-h-full flex flex-col pt-2">
       {sections.map((section) => {
         const Icon   = section.icon
         const isOpen = open === section.id

@@ -155,7 +155,7 @@ export default function ProjectsSection() {
 
         >
           <FileText size={15} className="text-white/100 shrink-0" />
-          <span className={globalBillboardOpen ? 'underline underline-offset-4' : ''}>
+          <span className={'text-white ' + (globalBillboardOpen ? 'underline underline-offset-4' : '')}>
             Global Billboard
           </span>
         </button>
@@ -181,7 +181,7 @@ export default function ProjectsSection() {
 
         >
           <FileText size={15} className="text-white/100 shrink-0" />
-          <span className={curateOpen ? 'underline underline-offset-4' : ''}>
+          <span className={'text-white ' + (curateOpen ? 'underline underline-offset-4' : '')}>
             Curate
           </span>
         </button>

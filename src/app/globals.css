@@ -1,12 +1,15 @@
 @import "tailwindcss";
 
-html,
+html {
+  height: -webkit-fill-available;
+}
 body {
   overflow-y: scroll;
   scrollbar-width: none;
   background: transparent;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-family: var(--font-open-sans), sans-serif;
+  min-height: -webkit-fill-available;
 }
 
 html::-webkit-scrollbar,
