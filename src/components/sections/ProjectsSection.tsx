@@ -5,7 +5,7 @@ import { useState } from 'react'
 const feedPhotos    = ['feed1.PNG', 'feed2.PNG']
 const profilePhotos = ['profile1.PNG', 'profile2.PNG', 'profile3.PNG', 'profile4.PNG', 'profile5.PNG']
 const barterPhotos  = ['open.PNG', 'barter.PNG', 'close.PNG']
-import { User, ImageIcon, FolderOpen, File, ExternalLink, Info } from 'lucide-react'
+import { FileText } from 'lucide-react'
 
 
 export default function ProjectsSection() {
@@ -42,7 +42,7 @@ export default function ProjectsSection() {
            className="w-full text-sm flex items-center gap-3  text-left transition-colors"
 
         >
-          <File size={15} className="text-white/100 shrink-0" />
+          <FileText size={15} className="text-white/100 shrink-0" />
           <span className={winWinOpen ? 'underline underline-offset-4' : ''}>
             Win-Win
           </span>
@@ -58,7 +58,7 @@ export default function ProjectsSection() {
         
             <p className="text-white/80 text-sm tracking-wide leading-relaxed font-light">
               <span className="text-white/100 font-normal">The problem: </span>  
-              in our consumer minded culture, each of us owns things that another person would appreciate more.
+              in our consumer driven culture, each of us owns things that another person would appreciate more.
             </p>
             {/* <p className="text-white/100 text-sm tracking-wide leading-relaxed font-light pl-6">
               Consumerism overburdens us with things, and empties our wallets.
@@ -88,7 +88,7 @@ export default function ProjectsSection() {
             { label: 'Feed:',      description: 'Discover trading cards in your area through feed and user decks, send queries and offers.', photos: feedPhotos },
             { label: 'Your Deck:', description: 'Customize profile card, add locations, create trading cards, recieve queries and offers, initiate trades.', photos: profilePhotos },
             
-            { label: 'Barter:',    description: '', photos: barterPhotos },
+            { label: 'Barter:',    description: '"open" saves outgoing offers and queries, "barter" allows turn based negotiation after offer is accepted, and "close" allows users to decide on time, location, and then rate/review.', photos: barterPhotos },
           ].map(({ label, description, photos }) => (
             <div key={label} className="flex flex-col gap-2">
               <div className="max-w-xl flex flex-col gap-1 pl-6">
@@ -132,13 +132,17 @@ export default function ProjectsSection() {
           </p>
           <ul className="flex flex-col list-disc list-inside">
               <li className="text-white/80 text-sm leading-relaxed font-light">Locality</li>
-              <li className="text-white/80 text-sm leading-relaxed font-light">Collaboration</li>
+              <li className="text-white/80 text-sm leading-relaxed font-light">Reciprocity</li>
               <li className="text-white/80 text-sm leading-relaxed font-light">Creativity</li>
               <li className="text-white/80 text-sm leading-relaxed font-light">Productivity</li>
               <li className="text-white/80 text-sm leading-relaxed font-light">Light Democracy? I'm working on it.</li>
             </ul>
         </div>
-        
+
+        <p className="text-white/80 text-sm tracking-wide leading-relaxed font-light">
+          New questions emerge, like, are there alternative ways to organize online social life?
+          My next projects will explore some of these methods. 
+        </p>
         
         <p className="text-white/80 text-sm tracking-wide leading-relaxed font-light">
           In the works:
@@ -150,7 +154,7 @@ export default function ProjectsSection() {
            className="w-full text-sm flex items-center gap-3  text-left transition-colors"
 
         >
-          <File size={15} className="text-white/100 shrink-0" />
+          <FileText size={15} className="text-white/100 shrink-0" />
           <span className={globalBillboardOpen ? 'underline underline-offset-4' : ''}>
             Global Billboard
           </span>
@@ -161,6 +165,9 @@ export default function ProjectsSection() {
             <div className="flex flex-col gap-4 max-w-xl pl-6">
               <p className="text-white/80 text-sm tracking-wide leading-relaxed font-light">
                 To give users a globe to use as a billboard for their ideas, projects, and events.
+                A logical endpoint of locality as an organizing principle. 
+                Instead of an engagment driven feed, users can explore at their whim a globe, rooting 
+                ideas and projects in the real world, and connecting with others in their area.
               </p>
             </div>
           </>
@@ -173,7 +180,7 @@ export default function ProjectsSection() {
            className="w-full text-sm flex items-center gap-3  text-left transition-colors"
 
         >
-          <File size={15} className="text-white/100 shrink-0" />
+          <FileText size={15} className="text-white/100 shrink-0" />
           <span className={curateOpen ? 'underline underline-offset-4' : ''}>
             Curate
           </span>
@@ -184,6 +191,8 @@ export default function ProjectsSection() {
             <div className="flex flex-col gap-4 max-w-xl pl-6">
               <p className="text-white/80 text-sm tracking-wide leading-relaxed font-light">
                 To allow users to save and organize the best content from around the web in Pinterest style boards. 
+                This is allowing users to organize the internet as they see fit, essentially craft and share their own internet,
+                filtering through all the dumb bullshit, the engagement bait, and delivering exactly what each user deems most valuable. 
               </p>
             </div>
           </>
