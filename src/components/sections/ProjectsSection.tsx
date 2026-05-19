@@ -133,15 +133,15 @@ export default function ProjectsSection() {
           <ul className="flex flex-col list-disc list-inside">
               <li className="text-white/80 text-sm leading-relaxed font-light">Locality</li>
               <li className="text-white/80 text-sm leading-relaxed font-light">Reciprocity</li>
-              <li className="text-white/80 text-sm leading-relaxed font-light">Creativity</li>
               <li className="text-white/80 text-sm leading-relaxed font-light">Productivity</li>
-              <li className="text-white/80 text-sm leading-relaxed font-light">Light Democracy? I'm working on it.</li>
+              <li className="text-white/80 text-sm leading-relaxed font-light">Creativity</li>
+              <li className="text-white/80 text-sm leading-relaxed font-light">Light Democracy?</li>
             </ul>
         </div>
-
+        <div className="flex flex-col gap-4 max-w-xl">
         <p className="text-white/80 text-sm tracking-wide leading-relaxed font-light">
-          New questions emerge, like, are there alternative ways to organize online social life?
-          My next projects will explore some of these methods. 
+          How to organize these spaces outside of pure engagement?
+          My next projects will explore some potential methods. 
         </p>
         
         <p className="text-white/80 text-sm tracking-wide leading-relaxed font-light">
@@ -164,9 +164,11 @@ export default function ProjectsSection() {
           <>
             <div className="flex flex-col gap-4 max-w-xl pl-6">
               <p className="text-white/80 text-sm tracking-wide leading-relaxed font-light">
-                To give users a globe to use as a billboard for their ideas, projects, and events.
-                A logical endpoint of locality as an organizing principle. 
-                Instead of an engagment driven feed, users can explore at their whim a globe, rooting 
+                To give users a globe to use as a billboard for their ideas, projects, and events
+              </p>
+              <p className="text-white/80 text-sm tracking-wide leading-relaxed font-light">
+                A logical endpoint of location as an organizing principle. 
+                Instead of an engagement driven feed, users can explore at their whim a globe, rooting 
                 ideas and projects in the real world, and connecting with others in their area.
               </p>
             </div>
@@ -191,14 +193,18 @@ export default function ProjectsSection() {
             <div className="flex flex-col gap-4 max-w-xl pl-6">
               <p className="text-white/80 text-sm tracking-wide leading-relaxed font-light">
                 To allow users to save and organize the best content from around the web in Pinterest style boards. 
-                This is allowing users to organize the internet as they see fit, essentially craft and share their own internet,
-                filtering through all the dumb bullshit, the engagement bait, and delivering exactly what each user deems most valuable. 
               </p>
+              <p className="text-white/80 text-sm tracking-wide leading-relaxed font-light">
+                
+                This will allow users to organize the internet as they see fit, essentially craft and share their own internet,
+                filtering through all the BS, the engagement bait, and delivering exactly what each user deems most valuable. 
+              </p>
+                
             </div>
           </>
         )}
 
-      
+      </div>
     </div>
   )
 }

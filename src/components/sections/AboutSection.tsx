@@ -3,7 +3,9 @@ export default function AboutSection() {
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-4 max-w-xl">
         <p className="text-white/80 text-sm tracking-wide leading-relaxed font-light">
-          Born in 2004 in Oregon, lived most of my life in California. Lifelong artist, noob coder and recent graduate of UC Santa Cruz with bachelors in computer science.
+          Born in 2004 in Oregon, lived most of my life in California. Lifelong artist, noob coder and recent graduate of UC Santa Cruz.
+          Add more stuff here.
+        
         </p>
 
         <div className="flex flex-col gap-1">
@@ -33,6 +35,7 @@ export default function AboutSection() {
             <li className="text-white/80 text-sm leading-relaxed font-light">Animation</li>
             <li className="text-white/80 text-sm leading-relaxed font-light">Music Production</li>
             <li className="text-white/80 text-sm leading-relaxed font-light">Karl Marx</li>
+            <li className="text-white/80 text-sm leading-relaxed font-light">More stuff probably</li>
           </ul>
         </div>
       </div>

@@ -17,10 +17,9 @@ export default function LinksSection() {
   const links = [
     { label: 'GitHub',     href: 'https://github.com/samcasebeer539' },
     { label: 'LinkedIn',   href: 'https://linkedin.com/in/samuel-casebeer' },
-    { label: 'Resume', href: '/resume1.pdf' },
     { label: 'Instagram',  href: 'https://instagram.com/samcasebeer.art' },
     { label: 'Letterboxd', href: 'https://boxd.it/53PyP' },
-    
+    { label: 'Resume', href: '/resume1.pdf' },
   ]
 
   return (

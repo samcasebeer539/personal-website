@@ -54,9 +54,10 @@ export default function ClientHome({ images }: Props) {
                 {section.id === 'sam' && (
                   <p className="text-sm tracking-wide text-white/80 leading-relaxed font-light max-w-xl">
                     I'm Sam Casebeer, I'm a multimedia artist and aspiring creative developer based in California. This website is a
-                    space for my art and projects. 
+                    space for my art and projects. Feel free to explore and reach out at my links below!
                     
-                    Feel free to explore and reach out for collabs, commissions, with steady employment opportunites or just to say hi!
+                    {/* Feel free to explore and reach out for collabs, commissions, with steady employment opportunites or just to say hi! */}
+
 
                   </p>
                 )}
