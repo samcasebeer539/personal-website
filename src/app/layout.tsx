@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           style={{ backgroundImage: 'url(/commie1.png)' }}
         />
         
-        <div className="fixed inset-0 -z-10 bg-black/50" />
+        <div className="fixed inset-0 -z-10 bg-black/45" />
         {children}
       </body>
     </html>
