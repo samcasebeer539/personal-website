@@ -96,7 +96,7 @@ export default function ProjectsSection() {
                   <span className=" text-white/100 font-normal">{label}</span> {description}
                 </p>
               </div>
-              <div className="flex flex-wrap gap-3 mt-3 mb-3">
+              <div className="flex flex-wrap gap-2 mt-3 mb-3">
                 {photos.map((filename) => (
                   <div key={filename} className="overflow-hidden rounded-xs w-[calc(20%-0.6rem)] min-w-40">
                     <img
