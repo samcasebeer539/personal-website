@@ -98,7 +98,7 @@ export default function ProjectsSection() {
               </div>
               <div className="flex flex-wrap gap-2 mt-3 mb-3">
                 {photos.map((filename) => (
-                  <div key={filename} className="overflow-hidden rounded-xs w-[calc(20%-0.6rem)] min-w-30">
+                  <div key={filename} className="overflow-hidden rounded-xs flex-1 min-w-30 max-w-[calc(20%-0.5rem)]">
                     <img
                       src={`/winwinphotos/${filename}`}
                       alt={filename}
