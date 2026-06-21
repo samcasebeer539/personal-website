@@ -40,11 +40,11 @@ export default function ClientHome({ images }: Props) {
 
             <button
               onClick={() => setOpen(open === section.id ? null : section.id)}
-              className="w-full flex items-center gap-3 px-6 text-left transition-colors"
+              className="w-full flex items-center gap-3 px-6 text-left transition-colors group"
               style={{ height: HEADER_HEIGHT }}
             >
               <Icon size={15} className="text-white/100 shrink-0" />
-              <span className={`text-sm tracking-wide text-white/100 ${isOpen ? 'underline underline-offset-4' : ''}`}>
+              <span className={`text-sm tracking-wide text-white/100 ${isOpen ? 'underline underline-offset-4' : 'group-hover:underline group-hover:underline-offset-4'}`}>
                 {section.label}
               </span>
             </button>
@@ -79,11 +79,11 @@ export default function ClientHome({ images }: Props) {
         )
       })}
 
-      <div className="pl-[16px] mt-1 mb-4">
+      <div className="pl-[18px] mt-1 mb-4">
         <img
           src="/signature.png"
           alt="Sam Casebeer"
-          className="w-24 opacity-100 pointer-events-none"
+          className="w-20 opacity-100 pointer-events-none"
         />
       </div>
     </div>
