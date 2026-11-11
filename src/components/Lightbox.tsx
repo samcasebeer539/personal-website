@@ -81,7 +81,7 @@ export default function Lightbox({ images, index, onClose, onIndexChange }: Prop
             key={current.id}
             src={current.src}
             alt={current.alt}
-            className="max-h-[92vh] max-w-[88vw] object-contain select-none rounded-xs"
+            className="max-h-[calc(100dvh-8rem)] max-w-[94vw] sm:max-h-[92vh] sm:max-w-[88vw] object-contain select-none rounded-xs"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.2 }}
@@ -101,19 +101,19 @@ export default function Lightbox({ images, index, onClose, onIndexChange }: Prop
             <>
               <button
                 onClick={(e) => { e.stopPropagation(); prev() }}
-                className="absolute left-0 top-1/2 -translate-y-1/2 px-3 py-10 sm:px-6 flex items-center text-white/60 hover:text-white transition-colors"
+                className="absolute left-2 bottom-1 p-3 sm:left-0 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 sm:px-6 sm:py-10 flex items-center text-white/60 hover:text-white transition-colors"
                 aria-label="Previous image"
               >
                 <ChevronLeft size={36} />
               </button>
               <button
                 onClick={(e) => { e.stopPropagation(); next() }}
-                className="absolute right-0 top-1/2 -translate-y-1/2 px-3 py-10 sm:px-6 flex items-center text-white/60 hover:text-white transition-colors"
+                className="absolute right-2 bottom-1 p-3 sm:right-0 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 sm:px-6 sm:py-10 flex items-center text-white/60 hover:text-white transition-colors"
                 aria-label="Next image"
               >
                 <ChevronRight size={36} />
               </button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-xs tracking-wide text-white/60">
+              <div className="absolute bottom-6 sm:bottom-4 left-1/2 -translate-x-1/2 text-xs tracking-wide text-white/60">
                 {index! + 1} / {count}
               </div>
             </>
