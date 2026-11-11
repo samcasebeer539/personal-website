@@ -6,12 +6,29 @@ const feedPhotos    = ['feed1.PNG', 'feed2.PNG']
 const profilePhotos = ['profile1.PNG', 'profile2.PNG', 'profile3.PNG', 'profile4.PNG', 'profile5.PNG']
 const barterPhotos  = ['open.PNG', 'barter.PNG', 'close.PNG']
 import { FileText } from 'lucide-react'
+import Lightbox from '../Lightbox'
+
+const winWinSections = [
+  { label: 'Feed:',      description: 'Discover trading cards in your area through feed and user decks, send queries and offers.', photos: feedPhotos },
+  { label: 'Your Deck:', description: 'Customize profile card, add locations, create trading cards, recieve queries and offers, initiate trades.', photos: profilePhotos },
+  { label: 'Barter:',    description: '"open" saves outgoing offers and queries, "barter" allows turn based negotiation after offer is accepted, and "close" allows users to decide on time, location, and then rate/review.', photos: barterPhotos },
+]
+
+// Every Win-Win screenshot in page order, so the viewer can click through all of them
+const winWinImages = winWinSections.flatMap(({ photos }) =>
+  photos.map((filename) => ({
+    id: filename,
+    src: `/winwinphotos/${filename}`,
+    alt: filename.replace(/\.png$/i, ''),
+  }))
+)
 
 
 export default function ProjectsSection() {
   const [winWinOpen, setWinWinOpen] = useState(true)
   const [globalBillboardOpen, setGlobalBillboardOpen] = useState(false)
   const [curateOpen, setCurateOpen] = useState(false)
+  const [viewerIndex, setViewerIndex] = useState<number | null>(null)
 
   return (
     <div className="flex flex-col gap-4">
@@ -79,17 +96,12 @@ export default function ProjectsSection() {
             <ul className="flex flex-col list-decimal list-inside">
               <li className="text-white/80 text-sm leading-relaxed font-light">Players create a number of trading cards (offer listings).</li>
               <li className="text-white/80 text-sm leading-relaxed font-light">Player 1 finds a card they want and places an offer.</li>
-              <li className="text-white/80 text-sm leading-relaxed font-light">Player 2 receives the offer and can choose from any of Player 1's cards to begin negotiations.</li>
+              <li className="text-white/80 text-sm leading-relaxed font-light">Player 2 receives the offer and can choose from any of Player 1&apos;s cards to begin negotiations.</li>
               <li className="text-white/80 text-sm leading-relaxed font-light">If terms are agreed upon, they trade at a safe exchange location and rate/review to close.</li>
             </ul>
           </div>
 
-          {[
-            { label: 'Feed:',      description: 'Discover trading cards in your area through feed and user decks, send queries and offers.', photos: feedPhotos },
-            { label: 'Your Deck:', description: 'Customize profile card, add locations, create trading cards, recieve queries and offers, initiate trades.', photos: profilePhotos },
-            
-            { label: 'Barter:',    description: '"open" saves outgoing offers and queries, "barter" allows turn based negotiation after offer is accepted, and "close" allows users to decide on time, location, and then rate/review.', photos: barterPhotos },
-          ].map(({ label, description, photos }) => (
+          {winWinSections.map(({ label, description, photos }) => (
             <div key={label} className="flex flex-col gap-2">
               <div className="max-w-xl flex flex-col gap-1 pl-6">
                 <p className="text-white/80 text-sm tracking-wide leading-relaxed font-light">
@@ -98,13 +110,19 @@ export default function ProjectsSection() {
               </div>
               <div className="flex flex-wrap gap-2 mt-3 mb-3">
                 {photos.map((filename) => (
-                  <div key={filename} className="overflow-hidden rounded-xs flex-1 min-w-30 max-w-[calc(20%-0.5rem)]">
+                  <button
+                    key={filename}
+                    type="button"
+                    onClick={() => setViewerIndex(winWinImages.findIndex((img) => img.id === filename))}
+                    className="overflow-hidden rounded-xs flex-1 min-w-30 max-w-[calc(20%-0.5rem)] cursor-zoom-in"
+                    aria-label={`View ${filename} fullscreen`}
+                  >
                     <img
                       src={`/winwinphotos/${filename}`}
                       alt={filename}
                       className="w-full h-auto"
                     />
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
@@ -205,6 +223,13 @@ export default function ProjectsSection() {
         )}
 
       </div>
+
+      <Lightbox
+        images={winWinImages}
+        index={viewerIndex}
+        onClose={() => setViewerIndex(null)}
+        onIndexChange={setViewerIndex}
+      />
     </div>
   )
 }

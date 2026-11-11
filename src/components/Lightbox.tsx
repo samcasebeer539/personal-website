@@ -4,10 +4,14 @@ import { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
-import type { GalleryImage } from './Gallery'
+export interface LightboxImage {
+  id: string
+  src: string
+  alt: string
+}
 
 interface Props {
-  images: GalleryImage[]
+  images: LightboxImage[]
   index: number | null
   onClose: () => void
   onIndexChange: (index: number) => void
@@ -77,7 +81,7 @@ export default function Lightbox({ images, index, onClose, onIndexChange }: Prop
             key={current.id}
             src={current.src}
             alt={current.alt}
-            className="max-h-[92vh] max-w-[88vw] object-contain select-none"
+            className="max-h-[92vh] max-w-[88vw] object-contain select-none rounded-xs"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.2 }}
